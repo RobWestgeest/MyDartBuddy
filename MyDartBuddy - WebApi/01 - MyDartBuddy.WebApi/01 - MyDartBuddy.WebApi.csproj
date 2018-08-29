@@ -269,6 +269,10 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "R:\Deliverables\$(SolutionName)\"
+xcopy "$(TargetDir)*.dll" "R:\Deliverables\$(SolutionName)" /exclude:R:\SUPPOR~1\FilesToExclude.txt /y /r</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

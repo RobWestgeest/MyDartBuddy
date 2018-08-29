@@ -62,4 +62,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "R:\Deliverables\$(SolutionName)\"
+xcopy "$(TargetDir)*.dll" "R:\Deliverables\$(SolutionName)" /exclude:R:\SUPPOR~1\FilesToExclude.txt /y /r</PostBuildEvent>
+  </PropertyGroup>
 </Project>
