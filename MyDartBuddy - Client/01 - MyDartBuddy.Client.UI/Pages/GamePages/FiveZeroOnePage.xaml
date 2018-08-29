@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
+             x:Class="MyDartBuddy.Client.UI.Pages.GamePages.FiveZeroOnePage"  x:Name="page">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Undo"/>
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Resources>
+      <ResourceDictionary>
+        <Style x:Key="lbInputStyle" TargetType="Label">                  
+          <Setter Property="FontSize" Value="Medium" />
+          <Setter Property="TextColor" Value="Black" />
+          <Setter Property="VerticalTextAlignment" Value="Center" />
+          <Setter Property="HorizontalTextAlignment" Value="Center" />       
+        </Style>
+        <!--<converters:IntToStringConverter x:Key="intToStringConverter"/>-->
+      </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>       
+        <StackLayout Padding="5,5,5,5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>                   
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>                    
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding TotalValue}" x:Name="lblTotalValue"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Undo" Grid.Row="0" Grid.Column="0" Clicked="UndoButton_Clicked"/>
+                <Label Text="{Binding InputValue}" Grid.Row="0" Grid.Column="1"  Style="{StaticResource lbInputStyle}" x:Name="lblInputValue"/>
+              <Label Text="{Binding RemainingValue}" Grid.Row="0" Grid.Column="2"  Style="{StaticResource lbInputStyle}" x:Name="lblRemainingValue"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition  Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="26" Grid.Row="0" Grid.Column="0"/>
+                <Button Text="41" Grid.Row="1" Grid.Column="0"/>
+                <Button Text="45" Grid.Row="2" Grid.Column="0"/>
+
+                <Button Text="1" Grid.Row="0" Grid.Column="1"  Clicked="InputButton_Clicked"/>
+                <Button Text="4" Grid.Row="1" Grid.Column="1"  Clicked="InputButton_Clicked"/>
+                <Button Text="7" Grid.Row="2" Grid.Column="1"  Clicked="InputButton_Clicked"/>
+
+                <Button Text="2" Grid.Row="0" Grid.Column="2"  Clicked="InputButton_Clicked"/>
+                <Button Text="5" Grid.Row="1" Grid.Column="2"  Clicked="InputButton_Clicked"/>
+                <Button Text="8" Grid.Row="2" Grid.Column="2"  Clicked="InputButton_Clicked"/>
+
+                <Button Text="3" Grid.Row="0" Grid.Column="3"  Clicked="InputButton_Clicked"/>
+                <Button Text="6" Grid.Row="1" Grid.Column="3"  Clicked="InputButton_Clicked"/>
+                <Button Text="9" Grid.Row="2" Grid.Column="3"  Clicked="InputButton_Clicked"/>
+
+                <Button Text="60" Grid.Row="0" Grid.Column="4"/>
+                <Button Text="80" Grid.Row="1" Grid.Column="4"/>
+                <Button Text="100" Grid.Row="2" Grid.Column="4"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>                  
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition Width="*"/>                   
+                </Grid.ColumnDefinitions>
+                <Button Text="CLR" Grid.Row="0" Grid.Column="0" BackgroundColor="Red" Clicked="ClearButton_Clicked"/>
+                <Button Text="0" Grid.Row="0" Grid.Column="1" Clicked="InputButton_Clicked"/>
+                <Button Text="OK" Grid.Row="0" Grid.Column="2" BackgroundColor="Green" Clicked="OkButton_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

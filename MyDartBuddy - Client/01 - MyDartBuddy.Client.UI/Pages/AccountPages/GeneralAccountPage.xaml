@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:imp="clr-namespace:MyDartBuddy.Client.Implementation;assembly=MyDartBuddy.Client.Implementation"
+             x:Class="MyDartBuddy.Client.UI.Pages.AccountPages.GeneralAccountPage" Title="{Binding Source={x:Static imp:ApplicationData.Current}, Path=PageTitle}">
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition  Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Current account:" Grid.Row="0" Grid.Column="0" />
+                <Label Text="{Binding Source={x:Static imp:ApplicationData.Current}, Path=FullAccountName}" Grid.Row="0" Grid.Column="1" />
+                <Label Text="" Grid.Row="1" Grid.Column="0" />
+                <Label Text="{Binding Source={x:Static imp:ApplicationData.Current}, Path=CurrentAccount.Email}" Grid.Row="1" Grid.Column="1" />
+            </Grid>
+            <Button Text="Switch account" Clicked="SwitchAccount_Clicked"/>
+            <Button Text="Update account" Clicked="UpdateAccount_Clicked"/>
+            <Button Text="Create account" Clicked="CreateAccount_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

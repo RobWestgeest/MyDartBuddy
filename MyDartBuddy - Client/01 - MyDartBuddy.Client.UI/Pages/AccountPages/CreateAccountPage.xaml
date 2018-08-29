@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MyDartBuddy.Client.Common.Converters;assembly=MyDartBuddy.Client.Common"
+             x:Class="MyDartBuddy.Client.UI.Pages.AccountPages.CreateAccountPage" Title="Create account" x:Name="page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BooleanConverter x:Key="booleanConverter"/>
+            <converters:StringToBooleanConverter x:Key="stringToBooleanConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="StartAndExpand" Padding="10,10,10,10" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Label x:Name="firstNameMessageLabel" TextColor="Red" IsVisible="{Binding  Source={x:Reference firstNameMessageLabel}, Path=Text, Converter={StaticResource stringToBooleanConverter}}"/>
+                <Label Text="First name" />
+                <Entry x:Name="firstNameEntry" Placeholder="firstName" />
+                <Label x:Name="lastNameMessageLabel" TextColor="Red" IsVisible="{Binding  Source={x:Reference lastNameMessageLabel}, Path=Text, Converter={StaticResource stringToBooleanConverter}}"/>
+                <Label Text="Last name" />
+                <Entry x:Name="lastNameEntry" Placeholder="lastName" />
+                <Label x:Name="emailMessageLabel" TextColor="Red" IsVisible="{Binding  Source={x:Reference emailMessageLabel}, Path=Text, Converter={StaticResource stringToBooleanConverter}}"/>
+                <Label Text="E-Mail address" />
+                <Entry x:Name="emailEntry" Placeholder="email" />
+                <Label x:Name="passwordMessageLabel" TextColor="Red" IsVisible="{Binding  Source={x:Reference passwordMessageLabel}, Path=Text, Converter={StaticResource stringToBooleanConverter}}"/>
+                <Label Text="Password" />
+                <Entry x:Name="passwordEntry" IsPassword="true" />
+                <Label x:Name="confirmPasswordMessageLabel" TextColor="Red" IsVisible="{Binding  Source={x:Reference confirmPasswordMessageLabel}, Path=Text, Converter={StaticResource stringToBooleanConverter}}"/>
+                <Label Text="Confirm password" />
+                <Entry x:Name="confirmPasswordEntry" IsPassword="true" />
+                <Button x:Name="btnCreateAccount" Text="Create account" Clicked="OnCreateAccountButtonClicked" IsEnabled="{Binding Source={x:Reference page}, Path=IsBusy, Converter={StaticResource booleanConverter}}"/>
+                <Label x:Name="mainMessageLabel" TextColor="Red" HorizontalOptions="Center" IsVisible="{Binding  Source={x:Reference mainMessageLabel}, Path=Text, Converter={StaticResource stringToBooleanConverter}}"/>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding Source={x:Reference page}, Path=IsBusy}" Padding="12" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                <ActivityIndicator IsRunning="{Binding Source={x:Reference page}, Path=IsBusy}" Color ="Gray"/>
+                <Label Text="Processing" HorizontalOptions="Center" TextColor="Gray"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

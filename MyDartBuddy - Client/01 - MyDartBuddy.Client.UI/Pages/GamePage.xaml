@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:imp="clr-namespace:MyDartBuddy.Client.Implementation;assembly=MyDartBuddy.Client.Implementation"
+             x:Class="MyDartBuddy.Client.UI.Pages.GamePage" Title="{Binding Source={x:Static imp:ApplicationData.Current}, Path=PageTitle}">
+    <ContentPage.Content>
+        <StackLayout>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
