@@ -79,12 +79,12 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
+    <Reference Include="MyDartBuddy.Common">
+      <HintPath>R:\Deliverables\MyDartBuddy - WebApi\MyDartBuddy.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="MyDartBuddy.Common">
-      <HintPath>..\MyDartBuddy.Common.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
